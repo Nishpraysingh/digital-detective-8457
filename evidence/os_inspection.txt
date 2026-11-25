@@ -1,0 +1,45 @@
+Operating System Inspection Log - Mission 3
+System: macOS Darwin arm64
+
+1. macOS System Information:
+$ sw_vers
+ProductName:		macOS
+ProductVersion:		27.2.1
+BuildVersion:		26B131
+
+$ uname -mrs
+Darwin 27.2.0 arm64
+
+2. User Identity (Sanitized):
+$ id
+uid=[REDACTED_UID]([REDACTED_USER]) gid=[REDACTED_GID](staff) groups=20(staff),...
+$ whoami
+[REDACTED_USER]
+
+3. Disk Storage Utilization:
+$ df -h /
+Filesystem        Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk3s1s1   460Gi    13Gi   309Gi     4%    487k  3.2G    0%   /
+
+4. Process Snapshot (PIDs and Commands):
+$ ps -ef | head -n 8
+  UID   PID  PPID   C STIME   TTY           TIME CMD
+    0     1     0   0 Fri08AM ??        11:29.96 /sbin/launchd
+    0   533     1   0 Fri08AM ??         7:15.45 /usr/libexec/logd
+    0   536     1   0 Fri08AM ??         0:26.62 /usr/libexec/UserEventAgent (System)
+    0   538     1   0 Fri08AM ??         4:51.90 /System/Library/Frameworks/.../fseventsd
+    0   539     1   0 Fri08AM ??         0:47.21 /System/Library/PrivateFrameworks/.../mediaremoted
+    0   542     1   0 Fri08AM ??         0:35.39 /usr/sbin/systemstats --daemon
+    0   546     1   0 Fri08AM ??         1:28.69 /usr/libexec/configd
+
+5. Permission Triplet Test:
+$ ls -l terminal-practice/perm_test.sh
+-rw-r--r--  1 [REDACTED_USER]  staff  0 Nov 25 22:27 terminal-practice/perm_test.sh
+
+$ chmod +x terminal-practice/perm_test.sh
+$ ls -l terminal-practice/perm_test.sh
+-rwxr-xr-x  1 [REDACTED_USER]  staff  0 Nov 25 22:27 terminal-practice/perm_test.sh
+
+$ chmod 644 terminal-practice/perm_test.sh
+$ ls -l terminal-practice/perm_test.sh
+-rw-r--r--  1 [REDACTED_USER]  staff  0 Nov 25 22:27 terminal-practice/perm_test.sh
