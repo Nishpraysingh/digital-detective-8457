@@ -1,0 +1,56 @@
+Terminal Experiments Log - Mission 2
+Executed on: macOS Darwin
+Working Directory: [REDACTED_PATH]/digital-detective-8457/terminal-practice
+
+1. Print working directory:
+$ pwd
+[REDACTED_PATH]/digital-detective-8457/terminal-practice
+
+2. Overwriting file content using '>':
+$ touch sample.txt
+$ echo "Line 1: Initial text" > sample.txt
+$ echo "Line 1: Overwritten text" > sample.txt
+$ cat sample.txt
+Line 1: Overwritten text
+
+3. Appending file content using '>>':
+$ echo "Line 2: Appended text" >> sample.txt
+$ cat sample.txt
+Line 1: Overwritten text
+Line 2: Appended text
+
+4. Copying files with 'cp':
+$ cp sample.txt sample_backup.txt
+$ ls -l
+total 16
+-rw-r--r--  1 [USER]  staff  47 sample.txt
+-rw-r--r--  1 [USER]  staff  47 sample_backup.txt
+
+5. Moving / renaming files with 'mv':
+$ mv sample_backup.txt sample_renamed.txt
+$ ls -l
+total 16
+-rw-r--r--  1 [USER]  staff  47 sample.txt
+-rw-r--r--  1 [USER]  staff  47 sample_renamed.txt
+
+6. Listing with flags (-l, -a, -h):
+$ touch .hidden_note.txt
+$ ls -lah
+total 16
+drwxr-xr-x  5 [USER]  staff   160B .
+drwxr-xr-x  8 [USER]  staff   256B ..
+-rw-r--r--  1 [USER]  staff     0B .hidden_note.txt
+-rw-r--r--  1 [USER]  staff    47B sample.txt
+-rw-r--r--  1 [USER]  staff    47B sample_renamed.txt
+
+7. Pipeline with 'head':
+$ ls -la | head -n 5
+total 16
+drwxr-xr-x  5 [USER]  staff  160 .
+drwxr-xr-x  8 [USER]  staff  256 ..
+-rw-r--r--  1 [USER]  staff    0 .hidden_note.txt
+-rw-r--r--  1 [USER]  staff   47 sample.txt
+
+8. Homebrew check:
+$ brew --version
+Homebrew 7.0.12
