@@ -1,0 +1,44 @@
+Number Converter Test Execution Logs - Mission 5
+Tested using Python 3.14.7
+
+========================================
+Test Run 1: Input = 42
+========================================
+$ echo "42" | python3 mission-05-numbers-data/number_converter.py
+=== Decimal Number Converter ===
+Enter a decimal integer: --- Conversion Results ---
+Decimal value:     42
+Binary value:      0b101010
+Hexadecimal value: 0x2a
+
+Verification:
+42 in binary: 32 + 8 + 2 = 2^5 + 2^3 + 2^1 = 101010_2
+42 in hex: 2*16 + 10 = 2A_16
+
+========================================
+Test Run 2: Input = 100
+========================================
+$ echo "100" | python3 mission-05-numbers-data/number_converter.py
+=== Decimal Number Converter ===
+Enter a decimal integer: --- Conversion Results ---
+Decimal value:     100
+Binary value:      0b1100100
+Hexadecimal value: 0x64
+
+Verification:
+100 in binary: 64 + 32 + 4 = 2^6 + 2^5 + 2^2 = 1100100_2
+100 in hex: 6*16 + 4 = 64_16
+
+========================================
+Test Run 3: Input = 255
+========================================
+$ echo "255" | python3 mission-05-numbers-data/number_converter.py
+=== Decimal Number Converter ===
+Enter a decimal integer: --- Conversion Results ---
+Decimal value:     255
+Binary value:      0b11111111
+Hexadecimal value: 0xff
+
+Verification:
+255 in binary: 128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 = 11111111_2 (all 8 bits set)
+255 in hex: 15*16 + 15 = FF_16
