@@ -1,0 +1,42 @@
+Network Diagnostic Experiments Log - Mission 7
+Executed on macOS Darwin
+Target Public Domain: example.com
+
+========================================
+1. DNS Lookup via DiG
+========================================
+$ dig example.com +noall +answer
+; <<>> DiG 9.10.6 <<>> example.com +noall +answer
+;; global options: +cmd
+example.com.		115	IN	A	104.20.23.154
+example.com.		115	IN	A	172.66.147.243
+
+Observation:
+Resolved hostname example.com to public IPv4 addresses 104.20.23.154 and 172.66.147.243.
+
+========================================
+2. Host Resolution
+========================================
+$ host example.com
+example.com has address 172.66.147.243
+example.com has address 104.20.23.154
+example.com has IPv6 address 2606:4700:10::ac42:93f3
+example.com has IPv6 address 2606:4700:10::6814:179a
+example.com mail is handled by 0 .
+
+========================================
+3. ICMP Ping Connectivity Test
+========================================
+$ ping -c 3 example.com
+PING example.com (104.20.23.154): 56 data bytes
+64 bytes from 104.20.23.154: icmp_seq=0 ttl=56 time=72.036 ms
+64 bytes from 104.20.23.154: icmp_seq=1 ttl=56 time=94.347 ms
+64 bytes from 104.20.23.154: icmp_seq=2 ttl=56 time=55.403 ms
+
+--- example.com ping statistics ---
+3 packets transmitted, 3 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 55.403/73.929/94.347/15.955 ms
+
+Observation:
+Target server is reachable over IP network with 0% packet loss and an average round-trip latency of 73.9 ms.
+Local/personal IP addresses have been excluded for privacy.
