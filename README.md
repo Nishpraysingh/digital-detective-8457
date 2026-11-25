@@ -17,6 +17,19 @@ This repository documents my hands-on exploration of my computer system. Across 
 
 ---
 
+## My Learning
+
+1. **How Low-Level Computer Operations Work:**
+   Learning how data moves through the IPOS (Input, Processing, Output, Storage) cycle helped me connect physical hardware components (like the CPU, RAM, and SSD) with the code I write. Understanding binary and hexadecimal conversions also made it clear why computers use base-2 internally and base-16 for readable memory representations.
+
+2. **Power of the Command Line and OS Control:**
+   Using the macOS Terminal for file operations, permission audits (`chmod`), and process inspection (`ps`) showed me how the operating system manages resources directly without needing a graphical desktop interface.
+
+3. **Modern Version Control with Git:**
+   Practicing branching (`update-about`), staging, and pull requests demonstrated how software teams build features in isolation and review code before merging into the main branch.
+
+---
+
 ## Mission Index
 
 | Mission | Folder | Focus Area |
